@@ -58,12 +58,58 @@ const StatisticsTable = ({
   } else {
     return (
       <>
-        <Statistics text="Good" value={good} />
-        <Statistics text="Neutral" value={neutral} />
-        <Statistics text="Bad" value={bad} />
-        <Statistics text="All" value={total} />
-        <Statistics text="Average" value={avg} />
-        <Statistics text="Positive(%)" value={positiveFeedback} />
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <Statistics text="Good" />
+              </td>
+              <td>
+                <Statistics value={good} />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Statistics text="Neutral" />
+              </td>
+              <td>
+                <Statistics value={neutral} />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Statistics text="Bad" />
+              </td>
+              <td>
+                <Statistics value={bad} />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Statistics text="All" />
+              </td>
+              <td>
+                <Statistics value={total} />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Statistics text="Average" />
+              </td>
+              <td>
+                <Statistics value={avg} />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Statistics text="Positive(%)" />
+              </td>
+              <td>
+                <Statistics value={positiveFeedback} />
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </>
     );
   }
@@ -71,7 +117,7 @@ const StatisticsTable = ({
 const Statistics = ({ text, value }) => {
   return (
     <p>
-      {text} : {value}
+      {text} {value}
     </p>
   );
 };
