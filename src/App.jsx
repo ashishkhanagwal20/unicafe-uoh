@@ -15,6 +15,11 @@ const App = () => {
   const handlebad = () => {
     setBad(bad + 1);
   };
+
+  const all = good + bad + neutral;
+  const avg = (all / 3).toFixed(2);
+  const positiveFeedback = ((good / all) * 100).toFixed(2);
+  console.log(all);
   return (
     <>
       <h2>Give Feedback</h2>
@@ -26,12 +31,14 @@ const App = () => {
       <p>Good : {good}</p>
       <p>Neutral : {neutral}</p>
       <p>Bad : {bad}</p>
+      <p>All : {all}</p>
+      <p>Average : {avg}</p>
+      <p>Positive : {positiveFeedback} %</p>
     </>
   );
 };
 
 const Button = ({ text, handleClick }) => {
-  console.log(text);
   return <button onClick={handleClick}>{text}</button>;
 };
 
